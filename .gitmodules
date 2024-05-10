@@ -10,3 +10,6 @@
 [submodule "semana2/lunes"]
 	path = semana2/lunes
 	url = git@github.com:Brianmax/lunesSem2.git
+[submodule "semana2/miercoles"]
+	path = semana2/miercoles
+	url = git@github.com:Brianmax/miercolesG5Sem2.git
