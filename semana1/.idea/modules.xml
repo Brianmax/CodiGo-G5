@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lunes/lunes.iml" filepath="$PROJECT_DIR$/lunes/lunes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repaso/repaso.iml" filepath="$PROJECT_DIR$/repaso/repaso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/semana1.iml" filepath="$PROJECT_DIR$/.idea/semana1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viernes/viernes.iml" filepath="$PROJECT_DIR$/viernes/viernes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viernes/src/viernes1.iml" filepath="$PROJECT_DIR$/viernes/src/viernes1.iml" />
+    </modules>
+  </component>
+</project>
