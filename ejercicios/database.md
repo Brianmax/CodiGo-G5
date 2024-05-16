@@ -1,4 +1,4 @@
-## Contexto: Gestión de una aerolínea
+# Gestión de una aerolínea
 
 Una aerolínea opera vuelos comerciales utilizando una flota de aviones y pilotos. Tienen una base de datos para gestionar toda la información relacionada con los aviones, vuelos, pilotos, pasajeros y reservas. Aquí hay una descripción de cada tabla:
 
