@@ -2,7 +2,7 @@
 -- creacion de la tabla aerolineas
 create table if not exists aerolineas(
 	id_aerolinea serial primary key,
-	nombre varchar(100),
+	nombre varchar(100)
 );
 
 -- creacion de la tabla aviones
