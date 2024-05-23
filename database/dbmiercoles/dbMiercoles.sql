@@ -65,3 +65,31 @@ create table if not exists pilotos(
 
 -- creacion de la tabla vuelo_piloto
 create table if not exists vuelo_piloto();
+
+
+-- alter table
+
+
+alter table reservas add column id_pasajero_fk integer;
+alter table reservas add column id_vuelo_fk integer;
+
+
+alter table reservas add constraint id_pasajero_fk 
+	foreign key(id_pasajero_fk) references pasajeros(id_pasajero);
+
+
+alter table reservas add constraint id_vuelo_fk 
+	foreign key(id_vuelo_fk) references vuelos(id_vuelo);
+
+
+-- id_vuelo_fk
+-- id_piloto_fk
+
+alter table vuelo_piloto add column id_vuelo_fk integer;
+alter table vuelo_piloto add column id_piloto_fk integer;
+
+alter table vuelo_piloto add constraint id_vuelo_fk 
+	foreign key(id_vuelo_fk) references vuelos(id_vuelo);
+
+alter table vuelo_piloto add constraint id_piloto_fk 
+	foreign key(id_piloto_fk) references pilotos(id_piloto);
