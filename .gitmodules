@@ -19,3 +19,6 @@
 [submodule "semana3/lunes"]
 	path = semana3/lunes
 	url = git@github.com:Brianmax/LunesSem3G5.git
+[submodule "database/conexionJavaDb"]
+	path = database/conexionJavaDb
+	url = git@github.com:Brianmax/sem4DbConection.git
