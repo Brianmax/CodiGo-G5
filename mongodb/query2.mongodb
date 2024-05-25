@@ -1,0 +1,49 @@
+use("db2")
+
+db.universidades.insertOne(
+    {
+        nombre: "UNI",
+        carreras: ["Ing Mecanica","Ing Electrica", "Ing Sanitaria"],
+        alumnos: 4000,
+        direccion: {
+            calle: "Miguel Grau",
+            numero: 209,
+            distrito: "San Isidro",
+            region: "Lima"
+        },
+        presupuesto: 1000000
+    }
+)
+
+use("db2")
+db.universidades.find()
+
+use("db2")
+db.universidades.insertMany(
+    [
+        {
+            nombre: "UNMSM",
+            carreras: ["Derecho", "Ing de Sistemas", "Psicologia", "Ing Mecanica"],
+            alumnos: 10000,
+            direccion: {
+                calle: "Av Arequipa",
+                numero: 190,
+                distrito: "Cercado",
+                region: "Lima"
+            },
+            presupuesto: 1500000
+        },
+        {
+            nombre: "PUCP",
+            carreras: ["Ing Mecanica", "Derecho", "Artes", "Psicologia"],
+            alumnos: 5000,
+            direccion: {
+                calle: "Av Vina del Mar",
+                numero: 399,
+                distrito: "Surco",
+                region: "Lima"
+            },
+            presupuesto: 3000000
+        }
+    ]
+)

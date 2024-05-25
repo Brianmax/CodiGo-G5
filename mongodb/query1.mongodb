@@ -1,0 +1,43 @@
+
+use("db1")
+db.createCollection("users")
+
+
+use("db1")
+db.users.insertOne(
+    {
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 30,
+        "email": "jperez@gmail.com"
+    }
+)
+
+use("db1")
+db.users.insertOne(
+    {
+        "nombre": "George",
+        "apellido": "Maxi",
+        "edad": 25,
+        "email": "gmaxi@gmail.com",
+        "estado": true
+    }
+)
+
+use("db1")
+db.users.insertMany(
+    [
+        {
+            nombre: "Paolo",
+            apellido: "Martinez",
+            edad: 25,
+            email: "pmartinez@gmail.com",
+        },
+        {
+            nombre: "Jose",
+            apellido: "Gutierrez",
+            edad: 30,
+            email: "jgutierrez@gmail.com",
+        }
+    ]
+)
