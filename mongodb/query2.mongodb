@@ -46,4 +46,42 @@ db.universidades.insertMany(
             presupuesto: 3000000
         }
     ]
-)
+);
+
+use("db2")
+db.universidades.insertMany(
+    [
+        {
+            nombre: "UNSA",
+            carreras: ["Ing Mecanica", "Derecho", "Artes", "Administracion"],
+            alumnos: 3000,
+            direccion: {
+                calle: "Av Independencia",
+                numero: 299,
+                distrito: "Arequipa-Cercado",
+                region: "Arequipa"
+            },
+            presupuesto: 1000000
+        },
+        {
+            nombre: "UNSAAC",
+            carreras: ["Ing Sistemas", "Derecho", "Quechua", "Ing Electrica"],
+            alumnos: 2000,
+            direccion: {
+                calle: "Av Cusco",
+                numero: 199,
+                distrito: "Cusco",
+                region: "Cusco"
+            },
+            presupuesto: 800000
+        }
+    ]
+);
+
+
+use("db2")
+db.universidades.find(
+    {
+        nombre: "UNSA"
+    }
+);

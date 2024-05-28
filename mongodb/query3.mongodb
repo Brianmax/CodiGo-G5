@@ -1,0 +1,183 @@
+use("db2")
+// operador $gt -> greater than
+// universidades con alumnos mayor que 4000
+db.universidades.find(
+    {
+        alumnos: {
+            $gt: 4000
+        }
+    }
+)
+use("db2")
+db.universidades.find()
+// operador $lt -> less than
+// universidades con presupuestos menores que 2000000
+use("db2")
+db.universidades.find(
+    {
+        presupuesto: {
+            $lt: 2000000
+        }
+    }
+);
+
+use("db2")
+// universidades que sean de lima
+db.universidades.find(
+    {
+        "direccion.region": "Lima"
+    }
+)
+
+use("db2")
+db.universidades.find(
+    {
+        "direccion.region": "Arequipa"
+    }
+)
+
+use("db2")
+db.universidades.insertOne(
+    {
+        _id: 1,
+        nombre: "UPCH",
+        carreras: ["Medicina", "Enfermeria", "Ing Biomedica"],
+        alumnos: 4000,
+        direccion: {
+            calle: "Av Aviacion",
+            numero: 111,
+            distrito: "Miraflores",
+            region: "Lima"
+        },
+        presupuesto: 3000000
+    }
+)
+use("db2")
+db.universidades.insertOne(
+    {
+        _id: 2,
+        nombre: "USIL",
+        carreras: ["Administracion", "Marketing", "Ing Industrial", "Ing Comercial"],
+        alumnos: 2000,
+        direccion: {
+            calle: "Av Peru",
+            numero: 229,
+            distrito: "Surco",
+            region: "Lima"
+        },
+        presupuesto: 2000000
+    }
+)
+
+use("db2")
+db.universidades.insertOne(
+    {
+        _id: 3,
+        nombre: "ULIMA",
+        carreras: ["Administracion", "Marketing", "Ing Industrial", "Ing Comercial", "Comunicaciones"],
+        alumnos: 4000,
+        direccion: {
+            calle: "Av Aviacion",
+            numero: 129,
+            distrito: "San Miguel",
+            region: "Lima"
+        },
+        presupuesto: 2000000
+    }
+)
+use("db2")
+db.universidades.insertOne(
+    {
+        _id: 4,
+        nombre: "UCSP",
+        carreras: ["Ing Mecatronica", "Medicina", "Ciencia de la Computacion", "Derecho", "Psicologia"],
+        alumnos: 3000,
+        direccion: {
+            calle: "Av Quinta Vivanco",
+            numero: 389,
+            distrito: "San Lazaro",
+            region: "Arequipa"
+        },
+        presupuesto: 2000000
+    }
+)
+use("db2")
+db.universidades.insertMany(
+    [
+        {
+            _id: 5,
+            nombre: "UTEC",
+            carreras: ["Ing Mecatronica", "Ing Electrica", "Ciencia de la Computacion", "Ing Quimica", "Ing Materiales"],
+            alumnos: 2500,
+            direccion: {
+                calle: "Av aviacion",
+                numero: 188,
+                distrito: "Barranco",
+                region: "Lima"
+            },
+            presupuesto: 4000000
+        },
+        {
+            _id: 6,
+            nombre: "UALM",
+            carreras: ["Ing Agronoma", "Ing Electrica", "Ing Quimica", "Ing Materiales"],
+            alumnos: 4000,
+            direccion: {
+                calle: "Av ejercito",
+                numero: 188,
+                distrito: "La Molina",
+                region: "Lima"
+            },
+            presupuesto: 2000000
+        },
+        {
+            _id: 7,
+            nombre: "UNFV",
+            carreras: ["Ing Civil", "Ing Electrica", "Historia", "Ing Telecomunicaciones", "Ing Materiales"],
+            alumnos: 2500,
+            direccion: {
+                calle: "Av parra",
+                numero: 399,
+                distrito: "San Miguel",
+                region: "Lima"
+            },
+            presupuesto: 2000000
+        }
+    ]
+)
+use("db2")
+db.universidades.find()
+use("db2")
+
+// funciona porque el _id es numerico
+db.universidades.find(
+    {
+        _id: {
+            $gt:0
+        }
+    }
+)
+
+// $gt, gte, lt, lte
+
+// quiero los documentos que tengan un presupuesto mayor igual que 1M, y menor igual que 2M
+use("db2")
+db.universidades.find(
+    {
+        presupuesto: {
+            $gte: 1000000,
+            $lte: 2000000
+        }
+    }
+)
+
+use("db2")
+db.universidades.find(
+    {
+        _id: {
+            $gte: 1,
+            $lte: 3
+        }
+    }
+);
+// or
