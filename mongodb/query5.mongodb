@@ -1,0 +1,98 @@
+use("db2")
+
+db.createCollection("users", 
+    {
+        validator: {
+            $jsonSchema: {
+                bsonType: 'object',
+                required: ['name', 'lastname'],
+                properties:{
+                    name: {
+                        bsonType: 'string'
+                    },
+                    lastname:{
+                        bsonType: 'string'
+                    },
+                    products:{
+                        bsonType: 'array',
+                        items: {
+                            bsonType: 'object',
+                            properties: {
+                                name:{
+                                    bsonType: 'string'
+                                },
+                                price:{
+                                    bsonType: 'double'
+                                }
+                            }
+                        }
+                    },
+                    direcciones:{
+                        bsonType: 'array',
+                        items:{
+                            bsonType: 'object',
+                            properties:{
+                                calle: {
+                                    bsonType: 'string'
+                                },
+                                nDepartamento: {
+                                    bsonType: 'string'
+                                },
+                                distrito: {
+                                    bsonType: 'string'
+                                },
+                                ciudad: {
+                                    bsonType: 'string'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+)
+use("db2")
+db.users.insertOne(
+    {
+        name: "George",
+        lastname: "Maxi"
+    }
+)
+use("db2")
+db.users.find();
+
+use("db2")
+db.users.insertOne(
+    {
+        name: "Jose",
+        lastname: "Chavez"
+    }
+)
+
+use("db2")
+db.users.insertOne(
+    {
+        name: "Pedro",
+        lastname: "Chavez",
+        products: [
+            {
+                name: "Laptop HP",
+                price: 1999.9
+            },
+            {
+                name: "Tablet Lenovo",
+                price: 1699.9
+            }
+        ],
+        direcciones: [
+            {
+                calle: "Daniel Alcides Carrion",
+                nDepartamento: "100",
+                distrito: "San Lazaro",
+                ciudad: "Arequipa"
+            }
+        ]
+    }
+)
+

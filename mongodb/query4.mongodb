@@ -1,0 +1,15 @@
+use("sample_analytics")
+db.customers.find().count();
+
+use("sample_training")
+db.zips.find();
+
+use("sample_training")
+db.companies.find(
+    {
+        _id: ObjectId('52cdef7c4bab8bd675297d8a')
+    }
+);
+
+use("sample_training")
+db.companies.find().count();

@@ -181,3 +181,106 @@ db.universidades.find(
     }
 );
 // or
+use("db2")
+db.universidades.find(
+    {
+        $or: [
+            {
+                _id: {
+                    $gte: 1,
+                    $lte: 3
+                }
+            },
+            {
+                _id: {
+                    $gte: 5,
+                    $lte: 7
+                }
+            }
+        ]
+    },
+    {
+        nombre: true,
+        presupuesto: true,
+        _id: false
+    }
+)
+
+use("db2")
+db.universidades.find(
+    {
+        $or: [
+            {
+                _id: {
+                    $gte: 1,
+                    $lte: 3
+                }
+            },
+            {
+                _id: {
+                    $gte: 5,
+                    $lte: 7
+                }
+            }
+        ]
+    },
+    {
+        nombre: true,
+        presupuesto: true,
+        _id: false
+    }
+).count()
+
+// update
+
+use("db2")
+db.universidades.find();
+use("db2")
+db.universidades.updateOne(
+    // filtro
+    {
+        _id: {
+            $gte: 3
+        }
+    },
+    // actualizacion
+    {
+        $set:
+        {
+            nombre: "ULIMA"
+        }
+    }   
+)
+
+use("db2")
+// inc
+db.universidades.updateMany(
+    {
+        alumnos:{
+            $gte: 3000
+        }
+    },
+    {
+        $inc:{
+            presupuesto: 1000000
+        }
+    }
+)
+
+use("db2")
+db.universidades.find().count()
+
+db.universidades.insertOne(
+    {
+        nombre: 199,
+        carreras: ["Ing Civil", "Ing Electrica", "Historia", "Ing Telecomunicaciones", "Ing Materiales"],
+        alumnos: 2500,
+        direccion: {
+            calle: "Av parra",
+            numero: 399,
+            distrito: "San Miguel",
+            region: "Lima"
+        },
+        presupuesto: 2000000
+    }
+)
