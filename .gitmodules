@@ -22,3 +22,6 @@
 [submodule "database/conexionJavaDb"]
 	path = database/conexionJavaDb
 	url = git@github.com:Brianmax/sem4DbConection.git
+[submodule "springBoot/springBasico"]
+	path = springBoot/springBasico
+	url = git@github.com:Brianmax/springBasico.git
